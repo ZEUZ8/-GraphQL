@@ -31,11 +31,17 @@ export const typeDefs = `#graphql
     author(id:ID!): Author
  }
 
-#  type Mutation{
+ type Mutation{
+    addGame(game: AddGameInput):Game
+    deleteGame(id:ID!):[Game]
+ }
 
-#  }
+ input AddGameInput {
+    title: String!
+    platform: [String!]!
+ }
 
-`
+`;
 
 //built in graphql there five basic scalar types that we can use
 // int, float, stings, boolean, ID,
